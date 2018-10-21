@@ -8,12 +8,25 @@ function printNumbers(){
 	}
 }
 function guessRandomNumber(){
-	var guess = Math.floor(maxNumber/2);
-	if(guess==number){
-		console.log("congratz");
-	} else if(guess>number){
-		console.log("it's lower");
-	} else if(guess<number){
-		console.log("it's higher");
+	var minNumber=0;
+	
+	for(var i=0;i<9;i++){
+		var guess = Math.floor((minNumber+maxNumber)/2);
+		console.log("my guess is "+guess);
+		if(guess>number)
+		{
+			console.log("it's lower");
+			maxNumber=guess;
+		} else if(guess<number)
+		{
+			console.log("it's higher");
+			minNumber=guess;
+		}
+
+		if(guess==number)
+		{
+			console.log("congratz");
+		}
+		console.log("min:"+minNumber+"max:"+maxNumber)
 	}
 }
